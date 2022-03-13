@@ -17,18 +17,18 @@ window.addEventListener("load", function() {
     
 
     if (
-      validateInput(pilotName) === "" ||
-      validateInput(copilotName) === "" ||
-      validateInput(fuelLevel) === "" ||
-      validateInput(cargoMass) === ""
+      validateInput(pilotName) === "Empty" ||
+      validateInput(copilotName) === "Empty" ||
+      validateInput(fuelLevel) === "Empty" ||
+      validateInput(cargoMass) === "Empty"
     ) {
       alert("All fields are required");
       event.preventDefault();
     } else if (
-      validateInput(pilotName) === "number" ||
-      validateInput(copilotName) === "number" ||
-      validateInput(fuelLevel) !== "number" ||
-      validateInput(cargoMass) !== "number"
+      validateInput(pilotName) === "Is a Number" ||
+      validateInput(copilotName) === "Is a Number" ||
+      validateInput(fuelLevel) === "Not a Number" ||
+      validateInput(cargoMass) !== "Not a Number"
     ) {
       alert("Make sure to enter valid information for each field!");
       event.preventDefault();

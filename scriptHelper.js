@@ -59,13 +59,12 @@ If the user submits a cargo mass that is too large (more than 10,000 kilograms),
 
 If the shuttle is ready to launch, change the text of launchStatus to green and display "Shuttle is ready for launch".*/
 
- let pilotReady = pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch `;
- let coPilotReady =
-   (copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch  `);
+
 
    if (fuelLevel < 10000 || cargoLevel > 10000) {
-      pilotReady;
-      coPilotReady;
+      pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch `;
+
+      copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch  `;
       list.style.visibility = "visible";
      //faultyItems.setAttribute = ("style : visible", "color: red");
     launchStatus.style.color = "red";
@@ -74,8 +73,9 @@ If the shuttle is ready to launch, change the text of launchStatus to green and 
      launchStatus.innerHTML = "Shuttle Not Ready for Launch";
     
    } else if (fuelLevel >= 10000 || cargoLevel <= 10000) {
-      pilotReady;
-      coPilotReady;
+     
+      pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch `;
+      copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch  `;
        list.style.visibility = "visible";
      //faultyItems.setAttribute = ("style : visible", "color: green");
      launchStatus.style.color = "gren";
