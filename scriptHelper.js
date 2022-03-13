@@ -68,8 +68,8 @@ If the shuttle is ready to launch, change the text of launchStatus to green and 
       list.style.visibility = "visible";
      //faultyItems.setAttribute = ("style : visible", "color: red");
     launchStatus.style.color = "rgb(65, 159, 106)";
-     fuelStatus.innerHTML = "There is not enough fuel for the journey";
-     cargoStatus.innerHTML = "There is too much mass for the shuttle to take off";
+     fuelStatus.innerHTML = "Fuel level high enough for launch";
+     cargoStatus.innerHTML = "Cargo mass too heavy for launch";
      launchStatus.innerHTML = "Shuttle Not Ready for Launch";
     
    } else if (fuelLevel >= 10000 || cargoLevel <= 10000) {
@@ -79,8 +79,8 @@ If the shuttle is ready to launch, change the text of launchStatus to green and 
        list.style.visibility = "visible";
      //faultyItems.setAttribute = ("style : visible", "color: green");
      launchStatus.style.color = "gren";
-     fuelStatus.innerHTML = "There is  enough fuel for the journey";
-     cargoStatus.innerHTML = "Cargo mass is enought for launch";
+     fuelStatus.innerHTML = "Fuel level too low for launch";
+     cargoStatus.innerHTML = "Cargo mass low enough for launch";
      launchStatus.innerHTML = "Shuttle is Ready for Launch";
    }
 
