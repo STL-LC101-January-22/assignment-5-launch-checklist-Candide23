@@ -22,7 +22,7 @@ window.addEventListener("load", function() {
       validateInput(cargoMass) === ""
     ) {
       alert("All fields are required");
-      //event.preventDefault();
+      event.preventDefault();
     } else if (
       validateInput(pilotName) === "number" ||
       validateInput(copilotName) === "number" ||
@@ -30,10 +30,10 @@ window.addEventListener("load", function() {
       validateInput(cargoMass) !== "number"
     ) {
       alert("Make sure to enter valid information for each field!");
-      //event.preventDefault();
+      event.preventDefault();
     } else {
       formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
-      //event.preventDefault();
+      event.preventDefault();
     }
   });
 
