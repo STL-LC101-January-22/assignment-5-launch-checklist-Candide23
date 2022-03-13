@@ -24,7 +24,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 function validateInput(testInput) {
   
 
-    if(typeof testInput === ""){
+    if(typeof testInput ===""){
         return "Empty";
     }else if (isNaN(testInput)) {
       return "Not a Number";
@@ -68,7 +68,7 @@ If the shuttle is ready to launch, change the text of launchStatus to green and 
       coPilotReady;
       list.style.visibility = "visible";
      //faultyItems.setAttribute = ("style : visible", "color: red");
-    launchStatus.style.color = red;
+    launchStatus.style.color = "red";
      fuelStatus.innerHTML = "There is not enough fuel for the journey";
      cargoStatus.innerHTML = "There is too much mass for the shuttle to take off";
      launchStatus.innerHTML = "Shuttle Not Ready for Launch";
@@ -78,7 +78,7 @@ If the shuttle is ready to launch, change the text of launchStatus to green and 
       coPilotReady;
        list.style.visibility = "visible";
      //faultyItems.setAttribute = ("style : visible", "color: green");
-     launchStatus.style.color = gren;
+     launchStatus.style.color = "gren";
      fuelStatus.innerHTML = "There is  enough fuel for the journey";
      cargoStatus.innerHTML = "Cargo mass is enought for launch";
      launchStatus.innerHTML = "Shuttle is Ready for Launch";
