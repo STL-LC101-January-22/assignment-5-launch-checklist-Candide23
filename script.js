@@ -28,7 +28,7 @@ window.addEventListener("load", function() {
       validateInput(pilotName) === "Is a Number" ||
       validateInput(copilotName) === "Is a Number" ||
       validateInput(fuelLevel) === "Not a Number" ||
-      validateInput(cargoMass) !== "Not a Number"
+      validateInput(cargoMass) === "Not a Number"
     ) {
       alert("Make sure to enter valid information for each field!");
       event.preventDefault();

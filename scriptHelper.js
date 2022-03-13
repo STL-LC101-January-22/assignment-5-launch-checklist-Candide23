@@ -28,7 +28,7 @@ function validateInput(testInput) {
         return "Empty";
     }else if (isNaN(testInput)) {
       return "Not a Number";
-    } else if (!isNaN(testInput)) {
+    } else  {
       return "Is a Number";
     }
    
@@ -67,13 +67,13 @@ If the shuttle is ready to launch, change the text of launchStatus to green and 
       copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch  `;
       list.style.visibility = "visible";
      //faultyItems.setAttribute = ("style : visible", "color: red");
-    launchStatus.style.color = "red";
+    launchStatus.style.color = "rgb(65, 159, 106)";
      fuelStatus.innerHTML = "There is not enough fuel for the journey";
      cargoStatus.innerHTML = "There is too much mass for the shuttle to take off";
      launchStatus.innerHTML = "Shuttle Not Ready for Launch";
     
    } else if (fuelLevel >= 10000 || cargoLevel <= 10000) {
-     
+
       pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch `;
       copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch  `;
        list.style.visibility = "visible";
