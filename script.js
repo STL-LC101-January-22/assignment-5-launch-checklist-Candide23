@@ -4,38 +4,33 @@
 
 window.addEventListener("load", function() {
 
+    let pilotStatus = document.getElementById("pilotStatus");
+    let copilotStatus = document.getElementById("copilotStatus");
+    let fuelStatus = document.getElementById("fuelStatus");
+    let cargoStatus = document.getElementById("cargoStatus");
+    let launchStatus = document.getElementById("launchStatus");
     
-    let pilotName = document.querySelector("input[name='pilotName']");
-    let copilotName = document.querySelector("input[name='copilotName']");
-    let fuelLevel = document.querySelector("input[name='fuelLevel']");
-    let cargoMass = document.querySelector("input[name='cargoMass']");
+    let pilotName = document.getElementById("pilotName");
+    let copilotName = document.getElementById("copilotName");
+    let fuelLevel = document.getElementById("fuelLevel");
+    let cargoMass = document.getElementById("cargoMass");
     let list = document.getElementById("faultyItems");
     list.style.visibility = "hidden"
 
-  let formSubmitBtn = document.getElementById("formSubmit");
-  formSubmitBtn.addEventListener("submit", function (event) {
-    
+  let form= document.querySelector("form")
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-    if (
-      validateInput(pilotName) === "Empty" ||
-      validateInput(copilotName) === "Empty" ||
-      validateInput(fuelLevel) === "Empty" ||
-      validateInput(cargoMass) === "Empty"
-    ) {
-      alert("All fields are required");
-      event.preventDefault();
-    } else if (
-      validateInput(pilotName) === "Is a Number" ||
-      validateInput(copilotName) === "Is a Number" ||
-      validateInput(fuelLevel) === "Not a Number" ||
-      validateInput(cargoMass) === "Not a Number"
-    ) {
-      alert("Make sure to enter valid information for each field!");
-      event.preventDefault();
-    } else {
-      formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
-      event.preventDefault();
-    }
+
+    formSubmission(
+      document,
+      list,
+      pilotName,
+      copilotName,
+      fuelLevel,
+      cargoMass
+    );
+    event.preventDefault();
   });
 
   let listedPlanets;

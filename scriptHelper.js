@@ -24,7 +24,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 function validateInput(testInput) {
   
 
-    if(typeof testInput ===""){
+    if(testInput ===""){
         return "Empty";
     }else if (isNaN(testInput)) {
       return "Not a Number";
@@ -46,11 +46,13 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
   let fuelLevel = document.querySelector("input[name='fuelLevel']");
   let cargoMass = document.querySelector("input[name='cargoMass']");*/
 
-  let pilotStatus = document.getElementById("pilotStatus");
-  let copilotStatus = document.getElementById("copilotStatus");
-  let fuelStatus = document.getElementById("fuelStatus");
-  let cargoStatus = document.getElementById("cargoStatus");
-  let launchStatus = document.getElementById("launchStatus");
+    let pilotStatus = document.getElementById("pilotStatus");
+    let copilotStatus = document.getElementById("copilotStatus");
+    let fuelStatus = document.getElementById("fuelStatus");
+    let cargoStatus = document.getElementById("cargoStatus");
+    let launchStatus = document.getElementById("launchStatus");
+
+
   //let listItems = document.getElementById("faultyItems");
 
   /*if the user submits a fuel level that is too low (less than 10,000 liters), change faultyItems to visible with an updated fuel status stating that there is not enough fuel for the journey. The text of the h2 element, launchStatus, should also change to "Shuttle not ready for launch" and the color should change to red.
@@ -59,9 +61,48 @@ If the user submits a cargo mass that is too large (more than 10,000 kilograms),
 
 If the shuttle is ready to launch, change the text of launchStatus to green and display "Shuttle is ready for launch".*/
 
+if (
+  validateInput(pilot) === "Empty" ||
+  validateInput(copilot) === "Empty" ||
+  validateInput(fuelLevel) === "Empty" ||
+  validateInput(cargoLevel) === "Empty"
+) {
+  alert("All fields are required");
+
+} else if (
+  validateInput(pilot) === "Is a Number" ||
+  validateInput(copilot) === "Is a Number" ||
+  validateInput(fuelLevel) === "Not a Number" ||
+  validateInput(cargoLevel) === "Not a Number"
+) {
+  alert("Make sure to enter valid information for each field!");
+ 
+}
+
+  copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch  `;
+  pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch `;
+  
+  if(fuelLevel < 10000){
+    list.style.visibility = "visible";
+    launchStatus.innerHTML = "Shuttle not ready for launch";
+    launchStatus.style.color = "rgb(255, 0, 0)";
+     fuelStatus.innerHTML = "Fuel level too low for launch";
+
+  } else if(cargoLevel > 10000){
+     list.style.visibility = "visible";
+     cargoStatus.innerHTML = "Cargo mass low enough for launch";
+     launchStatus.style.color = "rgb(255, 0, 0)";
+     fuelStatus.innerHTML = "Shuttle not ready for launch";
+
+  } else{
+     let readyForLaunnch = true;
+      launchStatus.style.color = "rgb(0, 128, 0)";
+       fuelStatus.innerHTML = "Shuttle is ready for launch";
+
+  }
 
 
-   if (fuelLevel < 10000 || cargoLevel > 10000) {
+   /*if (fuelLevel < 10000 || cargoLevel > 10000) {
       pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch `;
 
       copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch  `;
@@ -82,7 +123,7 @@ If the shuttle is ready to launch, change the text of launchStatus to green and 
      fuelStatus.innerHTML = "Fuel level too low for launch";
      cargoStatus.innerHTML = "Cargo mass low enough for launch";
      launchStatus.innerHTML = "Shuttle is Ready for Launch";
-   }
+   }*/
 
    
    
