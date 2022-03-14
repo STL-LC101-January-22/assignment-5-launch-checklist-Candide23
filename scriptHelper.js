@@ -85,18 +85,18 @@ if (
   if(fuelLevel < 10000){
     list.style.visibility = "visible";
     launchStatus.innerHTML = "Shuttle not ready for launch";
-    launchStatus.style.color = "rgb(255, 0, 0)";
+    launchStatus.style.color = "rgb(199, 37, 78)";
      fuelStatus.innerHTML = "Fuel level too low for launch";
 
   } else if(cargoLevel > 10000){
      list.style.visibility = "visible";
      cargoStatus.innerHTML = "Cargo mass low enough for launch";
-     launchStatus.style.color = "rgb(255, 0, 0)";
+     launchStatus.style.color = "rgb(199, 37, 78)";
      fuelStatus.innerHTML = "Shuttle not ready for launch";
 
   } else{
      let readyForLaunnch = true;
-      launchStatus.style.color = "rgb(0, 128, 0)";
+      launchStatus.style.color = "rgb(65, 159, 106)";
        fuelStatus.innerHTML = "Shuttle is ready for launch";
 
   }
