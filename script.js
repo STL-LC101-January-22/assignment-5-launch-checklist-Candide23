@@ -1,36 +1,60 @@
 // Write your JavaScript code here!
 
+//const { validateInput } = require("./scriptHelper");
 
+window.addEventListener("load", function () {
+  let pilotStatus = document.getElementById("pilotStatus");
+  let copilotStatus = document.getElementById("copilotStatus");
+  let fuelStatus = document.getElementById("fuelStatus");
+  let cargoStatus = document.getElementById("cargoStatus");
+  let launchStatus = document.getElementById("launchStatus");
 
-window.addEventListener("load", function() {
+  /*let pilotName = document.getElementById("pilotName");
+  let copilotName = document.getElementById("copilotName");
+  let fuelLevel = document.getElementById("fuelLevel");
+  let cargoMass = document.getElementById("cargoMass");
+  let list = document.getElementById("faultyItems");*/
 
-    let pilotStatus = document.getElementById("pilotStatus");
-    let copilotStatus = document.getElementById("copilotStatus");
-    let fuelStatus = document.getElementById("fuelStatus");
-    let cargoStatus = document.getElementById("cargoStatus");
-    let launchStatus = document.getElementById("launchStatus");
-    
-    let pilotName = document.getElementById("pilotName");
-    let copilotName = document.getElementById("copilotName");
-    let fuelLevel = document.getElementById("fuelLevel");
-    let cargoMass = document.getElementById("cargoMass");
-    let list = document.getElementById("faultyItems");
-    list.style.visibility = "hidden"
+  let pilotNameInput = document.querySelector("input[name = pilotName]");
+  let copilotNameInput = document.querySelector("input[name = copilotName]");
+  let fuelLevelInput = document.querySelector("input[name = fuelLevel]");
+  let cargoMassInput = document.querySelector("input[name = cargoMass]");
+  let list = document.getElementById("faultyItems");
 
-  let form= document.querySelector("form")
+  list.style.visibility = "hidden";
+
+  let form = document.querySelector("form");
   form.addEventListener("submit", function (event) {
     event.preventDefault();
 
+    if (
+      pilotNameInput.value === "" ||
+      copilotNameInput.value === "" ||
+      fuelLevelInput.value === "" ||
+      cargoMassInput.value === ""
+    ){
+         event.preventDefault();
+         alert("Fields are required");
 
-    formSubmission(
-      document,
-      list,
-      pilotName,
-      copilotName,
-      fuelLevel,
-      cargoMass
-    );
-    event.preventDefault();
+    } 
+    else if((validateInput(isNaN(pilotNameInput.value ))=== "Is a number") &&(validateInput(isNaN(copilotNameInput.value ))==="Is a Number")&&
+    (validateInput(isNaN(fuelLevelInput.value ))=== "Not a number")&&(validateInput(isNaN(cargoMassInput.value ))=== "Not a number")){
+        
+      event.preventDefault();
+        alert("Make sure to enter valid information for each field");
+
+    }
+      formSubmission(
+        document,
+        list,
+        pilotNameInput.value,
+        copilotNameInput.value,
+        fuelLevelInput.value,
+        cargoMassInput.value,
+        event.preventDefault()
+      );
+  
+   
   });
 
   let listedPlanets;
