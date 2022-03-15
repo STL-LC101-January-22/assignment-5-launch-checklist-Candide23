@@ -132,33 +132,34 @@ If the shuttle is ready to launch, change the text of launchStatus to green and 
      window.alert("Make sure to enter valid information for each field!");
    }*/
 
-    if (fuelLevel < 10000) {
-      list.style.visibility = "visible";
-      launchStatus.innerHTML = "Shuttle not ready for launch";
-      launchStatus.style.color = "rgb(199, 37, 78)";
-      fuelStatus.innerHTML = "Fuel level too low for launch";
-    } else if (cargoLevel > 10000) {
-      list.style.visibility = "visible";
-      cargoStatus.innerHTML = "Cargo mass low enough for launch";
-      launchStatus.style.color = "rgb(199, 37, 78)";
-      fuelStatus.innerHTML = "Shuttle not ready for launch";
-    } else {
-       readyForLaunnch = true;
-      launchStatus.style.color = "rgb(65, 159, 106)";
-      fuelStatus.innerHTML = "Shuttle is ready for launch";
-    }
+  /*if (fuelLevel < 10000) {
+    list.style.visibility = "visible";
+    launchStatus.innerHTML = "Shuttle Not ready for launch";
+    launchStatus.style.color = "rgb(199, 37, 78)";
+    fuelStatus.innerHTML = "Fuel level high enough for launch";
+    readyForLaunnch = false;
+  } else if (cargoLevel > 10000) {
+    list.style.visibility = "visible";
+    cargoStatus.innerHTML = "Cargo mass too heavy for launch";
+    launchStatus.style.color = "rgb(199, 37, 78)";
+    fuelStatus.innerHTML = "Fuel level high enough for launch";
+    readyForLaunnch = false;
+  } else {
+    readyForLaunnch = true;
+    launchStatus.style.color = "rgb(65, 159, 106)";
+    fuelStatus.innerHTML = "Shuttle is ready for Launch";
+  }*/
 
+  // work but don't give the answer when is not ready
+  pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
+  copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
 
-    // work but don't give the answer when is not ready
-    pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
-     copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
-
-     /*if (fuelLevel < 10000) {
+  if (fuelLevel < 10000) {
        list.style.visibility = "visible";
        fuelStatus.innerHTML = `Fuel level too low for launch`;
-       launchStatus.innerHTML = "Shuttle Not Ready for Launch";
        launchStatus.style.color = "rgb(199, 37, 78)";
-       statreadyForLaunnchus = false;
+        launchStatus.innerHTML = "Shuttle Not Ready for Launch";
+        readyForLaunnch = false;
      } else {
        fuelStatus.innerHTML = `Fuel level high enough for launch`;
      }
@@ -166,9 +167,9 @@ If the shuttle is ready to launch, change the text of launchStatus to green and 
      if (cargoLevel > 10000) {
        list.style.visibility = "visible";
        cargoStatus.innerHTML = `Cargo mass too heavy for launch`;
-       launchStatus.innerHTML = "Shuttle Not Ready for Launch";
        launchStatus.style.color = "rgb(199, 37, 78)";
-       readyForLaunnch = false;
+        launchStatus.innerHTML = "Shuttle Not Ready for Launch";
+        readyForLaunnch = false;
      } else {
        cargoStatus.innerHTML = `Cargo mass low enough for launch`;
      }
@@ -176,7 +177,7 @@ If the shuttle is ready to launch, change the text of launchStatus to green and 
      if (readyForLaunnch) {
        launchStatus.innerHTML = "Shuttle is Ready for Launch";
        launchStatus.style.color = "rgb(65, 159, 106)";
-     }*/
+     }
 }
 
 async function myFetch() {
