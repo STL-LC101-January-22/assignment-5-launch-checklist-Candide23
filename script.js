@@ -3,17 +3,7 @@
 //const { validateInput } = require("./scriptHelper");
 
 window.addEventListener("load", function () {
-  let pilotStatus = document.getElementById("pilotStatus");
-  let copilotStatus = document.getElementById("copilotStatus");
-  let fuelStatus = document.getElementById("fuelStatus");
-  let cargoStatus = document.getElementById("cargoStatus");
-  let launchStatus = document.getElementById("launchStatus");
-
-  /*let pilotName = document.getElementById("pilotName");
-  let copilotName = document.getElementById("copilotName");
-  let fuelLevel = document.getElementById("fuelLevel");
-  let cargoMass = document.getElementById("cargoMass");
-  let list = document.getElementById("faultyItems");*/
+  
 
   let pilotNameInput = document.querySelector("input[name = pilotName]");
   let copilotNameInput = document.querySelector("input[name = copilotName]");
