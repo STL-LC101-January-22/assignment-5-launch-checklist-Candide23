@@ -17,23 +17,6 @@ window.addEventListener("load", function () {
   form.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    if (
-      pilotNameInput.value === "" ||
-      copilotNameInput.value === "" ||
-      fuelLevelInput.value === "" ||
-      cargoMassInput.value === ""
-    ){
-         event.preventDefault();
-         alert("Fields are required");
-
-    } 
-    else if((validateInput(isNaN(pilotNameInput.value ))=== "Is a number") &&(validateInput(isNaN(copilotNameInput.value ))==="Is a Number")&&
-    (validateInput(isNaN(fuelLevelInput.value ))=== "Not a number")&&(validateInput(isNaN(cargoMassInput.value ))=== "Not a number")){
-        
-      event.preventDefault();
-        alert("Make sure to enter valid information for each field");
-
-    }
       formSubmission(
         document,
         list,
@@ -48,7 +31,6 @@ window.addEventListener("load", function () {
   });
 
   let listedPlanets;
-  // Set listedPlanetsResponse equal to the value returned by calling myFetch()
   let listedPlanetsResponse = myFetch();
   listedPlanetsResponse
     .then(function (result) {
