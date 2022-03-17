@@ -41,7 +41,7 @@ function validateInput(testInput) {
    
 }
 
-function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel,event) {
 
  
   
@@ -64,7 +64,7 @@ if (
   validateInput(fuelLevelInput.value) === "Empty" ||
   validateInput(cargoMassInput.value) === "Empty"
 ) {
- preventDefault();
+ event.preventDefault();
   alert ("Fields are required");
 } else if (
   validateInput(pilotNameInput.value) === "Is a Number" ||
@@ -72,7 +72,7 @@ if (
   validateInput(fuelLevelInput.value) === "Not a Number" ||
   validateInput(cargoMassInput.value) === "Not a Number"
 ) {
-  preventDefault();
+   event.preventDefault();
   alert ("Make sure to enter valid information for each field");
 }
   
