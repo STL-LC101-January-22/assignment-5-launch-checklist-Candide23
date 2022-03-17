@@ -63,7 +63,7 @@ if (
   validateInput(cargoMassInput.value) === "Empty"
 ) {
 
-  window.alert("Fields are required");
+  alert("Fields are required");
 } else if (
   validateInput(pilotNameInput.value) === "Is a Number" ||
   validateInput(copilotNameInput.value) === "Is a Number" ||
@@ -71,7 +71,7 @@ if (
   validateInput(cargoMassInput.value) === "Not a Number"
 ) {
  
-  window.alert("Make sure to enter valid information for each field");
+  alert("Make sure to enter valid information for each field");
 }
   
   pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
