@@ -16,25 +16,6 @@ window.addEventListener("load", function () {
   let form = document.querySelector("form");
   form.addEventListener("submit", function (event) {
     event.preventDefault();
-
-    if (
-      validateInput(pilotNameInput.value) === "Empty" ||
-      validateInput(copilotNameInput.value) === "Empty" ||
-      validateInput(fuelLevelInput.value) === "Empty" ||
-      validateInput(cargoMassInput.value) === "Empty"
-    ) {
-       event.preventDefault();
-      alert("Fields are required");
-    } else if (
-      validateInput(pilotNameInput.value) === "Is a Number" ||
-      validateInput(copilotNameInput.value) === "Is a Number" ||
-      validateInput(fuelLevelInput.value) === "Not a Number" ||
-      validateInput(cargoMassInput.value) === "Not a Number"
-    ) {
-       event.preventDefault();
-      alert("Make sure to enter valid information for each field");
-    }
-
       formSubmission(
         document,
         list,
