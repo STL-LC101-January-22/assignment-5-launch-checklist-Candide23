@@ -64,7 +64,7 @@ if (
   validateInput(fuelLevelInput.value) === "Empty" ||
   validateInput(cargoMassInput.value) === "Empty"
 ) {
-  alert("Fields are required");
+  alert("All fields are required");
   return;
   
 } else if (
