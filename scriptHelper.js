@@ -64,7 +64,7 @@ if (
   validateInput(fuelLevelInput.value) === "Empty" ||
   validateInput(cargoMassInput.value) === "Empty"
 ) {
-  alert("All fields are required");
+  alert("All fields are required!");
   return;
   
 } else if (
@@ -73,7 +73,7 @@ if (
   validateInput(fuelLevelInput.value) === "Not a Number" ||
   validateInput(cargoMassInput.value) === "Not a Number"
 ) {
-  alert("Make sure to enter valid information for each field");
+  alert("Make sure to enter valid information for each field!");
   return;
   
 }
