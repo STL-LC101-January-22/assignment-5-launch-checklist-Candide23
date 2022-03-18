@@ -66,7 +66,7 @@ if (
 ) {
 
   alert("Fields are required");
-   preventDefault();
+  
 } else if (
   validateInput(pilotNameInput.value) === "Is a Number" ||
   validateInput(copilotNameInput.value) === "Is a Number" ||
@@ -75,7 +75,7 @@ if (
 ) {
 
   alert("Make sure to enter valid information for each field");
-   preventDefault();
+  
 }
   
   pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
