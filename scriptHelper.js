@@ -58,7 +58,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
 
   let readyForLaunnch = true;
-if (
+/*if (
   validateInput(pilotNameInput.value) === "Empty" ||
   validateInput(copilotNameInput.value) === "Empty" ||
   validateInput(fuelLevelInput.value) === "Empty" ||
@@ -76,7 +76,7 @@ if (
   alert("Make sure to enter valid information for each field!");
   return;
   
-}
+}*/
   
   pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
   copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
