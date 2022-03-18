@@ -16,6 +16,7 @@ window.addEventListener("load", function () {
   let form = document.querySelector("form");
   form.addEventListener("submit", function (event) {
     event.preventDefault();
+
       formSubmission(
         document,
         list,
