@@ -43,13 +43,6 @@ function validateInput(testInput) {
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
- 
-  
-  let pilotNameInput = document.querySelector("input[name = pilotName]");
-  let copilotNameInput = document.querySelector("input[name = copilotName]");
-  let fuelLevelInput = document.querySelector("input[name = fuelLevel]");
-  let cargoMassInput = document.querySelector("input[name = cargoMass]");
-
   let pilotStatus = document.getElementById("pilotStatus");
   let copilotStatus = document.getElementById("copilotStatus");
   let fuelStatus = document.getElementById("fuelStatus");
@@ -58,25 +51,6 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
 
   let readyForLaunnch = true;
-/*if (
-  validateInput(pilotNameInput.value) === "Empty" ||
-  validateInput(copilotNameInput.value) === "Empty" ||
-  validateInput(fuelLevelInput.value) === "Empty" ||
-  validateInput(cargoMassInput.value) === "Empty"
-) {
-  alert("All fields are required!");
-  return;
-  
-} else if (
-  validateInput(pilotNameInput.value) === "Is a Number" ||
-  validateInput(copilotNameInput.value) === "Is a Number" ||
-  validateInput(fuelLevelInput.value) === "Not a Number" ||
-  validateInput(cargoMassInput.value) === "Not a Number"
-) {
-  alert("Make sure to enter valid information for each field!");
-  return;
-  
-}*/
   
   pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
   copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
